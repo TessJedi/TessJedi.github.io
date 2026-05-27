@@ -18,9 +18,8 @@ author:
 lang: "fr"
 
 # --- URLs ----------------------------------------------------
-# Domaine personnalisé : blog.mtf.org (configuré via le fichier CNAME
-# à la racine et un enregistrement DNS CNAME chez le registrar).
-url: "https://blog.mtf.org"
+# URL par défaut GitHub Pages (user site, sans baseurl).
+url: "https://tessjedi.github.io"
 baseurl: ""
 
 # --- Plugins ------------------------------------------------
