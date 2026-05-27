@@ -1,0 +1,13 @@
+{% include head.html %}
+<body class="{{ page.layout }}{% if page.body_class %} {{ page.body_class }}{% endif %}">
+
+  {% include header.html %}
+
+  <main class="site-main">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+</body>
+</html>

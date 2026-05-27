@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{% assign cat_slug = page.category %}
+{% assign cat_meta = site.categories_meta[cat_slug] %}
+
+<section class="category-hero">
+  <div class="container">
+    <p class="kicker">Catégorie</p>
+    <h1 class="category-title">{{ cat_meta.label | default: cat_slug }}</h1>
+    {% if page.description %}<p class="category-desc">{{ page.description }}</p>{% endif %}
+  </div>
+</section>
+
+<section class="container">
+  <ul class="post-list">
+    {% for post in site.posts %}
+      {% if post.categories contains cat_slug %}
+        {% include card.html post=post %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>

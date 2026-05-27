@@ -1,0 +1,39 @@
+{%- comment -%}
+  Entrée d'article (style minimaliste, pas de carte).
+  Paramètre :
+    include.post : l'objet post
+{%- endcomment -%}
+
+{% assign post = include.post %}
+{% assign cat_slug = post.categories | first %}
+{% assign cat_meta = site.categories_meta[cat_slug] %}
+
+<li class="post-entry">
+
+  <div class="post-entry-meta">
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time>
+    {% if cat_meta %}
+      <span class="dot">·</span>
+      <a class="post-entry-cat" href="{{ '/categories/' | append: cat_slug | append: '/' | relative_url }}">
+        {{ cat_meta.label | default: cat_slug }}
+      </a>
+    {% endif %}
+    {% if post.reading_time %}
+      <span class="dot">·</span>
+      <span>{{ post.reading_time }} min</span>
+    {% endif %}
+  </div>
+
+  <h2 class="post-entry-title">
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+  </h2>
+
+  {% if post.subtitle %}
+    <p class="post-entry-excerpt">{{ post.subtitle | strip_html | truncate: 180 }}</p>
+  {% elsif post.description %}
+    <p class="post-entry-excerpt">{{ post.description | strip_html | truncate: 180 }}</p>
+  {% elsif post.excerpt %}
+    <p class="post-entry-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
+  {% endif %}
+
+</li>

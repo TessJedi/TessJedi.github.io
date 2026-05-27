@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="container hero-inner">
+    <h1 class="hero-title">{{ site.title }}</h1>
+    <p class="hero-tagline">{{ site.tagline }}</p>
+  </div>
+</section>
+
+{% if site.posts.size > 0 %}
+<section class="container">
+  <p class="section-heading">Derniers articles</p>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      {% include card.html post=post %}
+    {% endfor %}
+  </ul>
+</section>
+{% else %}
+<section class="container empty">
+  <p>Aucun article publié pour le moment.</p>
+</section>
+{% endif %}

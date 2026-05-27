@@ -1,0 +1,21 @@
+<header class="site-header">
+  <div class="header-inner">
+
+    <a class="site-brand" href="{{ '/' | relative_url }}">
+      <span class="brand-name">{{ site.title }}</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="{{ '/' | relative_url }}">Accueil</a>
+      <a href="{{ '/categories/ai/' | relative_url }}">IA</a>
+      <a href="{{ '/categories/cybersecurity/' | relative_url }}">Cybersécurité</a>
+      <a href="{{ '/categories/dev/' | relative_url }}">Dev</a>
+      <a href="{{ '/about/' | relative_url }}">À propos</a>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.site-nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>

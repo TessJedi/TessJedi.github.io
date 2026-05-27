@@ -1,0 +1,92 @@
+# ============================================================
+#  Cybersecurity & AI, config Jekyll
+#  Blog perso de mt (GitHub: TessJedi)
+#  Style éditorial minimaliste, français.
+# ============================================================
+
+# --- Identité du site ---------------------------------------
+title: "Cybersecurity & AI"
+tagline: "Notes éditoriales sur la sécurité de l'information et l'intelligence artificielle"
+description: >-
+  Articles, analyses et retours d'expérience sur la cybersécurité,
+  l'IA appliquée et le développement logiciel.
+author:
+  name: "mt"
+  email: "tfeujio@gmail.com"
+  github: "TessJedi"
+
+lang: "fr"
+
+# --- URLs ----------------------------------------------------
+# Domaine personnalisé : blog.mtf.org (configuré via le fichier CNAME
+# à la racine et un enregistrement DNS CNAME chez le registrar).
+url: "https://blog.mtf.org"
+baseurl: ""
+
+# --- Plugins ------------------------------------------------
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# --- Pagination ---------------------------------------------
+paginate: 9
+paginate_path: "/page:num/"
+
+# --- Markdown / Highlighting --------------------------------
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  smart_quotes: ["apos", "rsquo", "ldquo", "rdquo"]
+
+# --- Permaliens ---------------------------------------------
+permalink: /:categories/:title/
+
+# --- Catégories (étiquette lisible + couleur) ---------------
+categories_meta:
+  ai:
+    label: "IA & Recherche"
+    color: "#7C3AED"
+  cybersecurity:
+    label: "Cybersécurité"
+    color: "#DC2626"
+  dev:
+    label: "Développement"
+    color: "#0EA5E9"
+
+# --- Front matter par défaut --------------------------------
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: "mt"
+      comments: false
+      show_date: true
+      show_reading_time: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+# --- Réseaux sociaux (affichés dans le footer) --------------
+social:
+  github: "TessJedi"
+  linkedin: "mtf-ai-security"
+  twitter: ""     # à compléter
+  email: "tfeujio@gmail.com"
+
+# --- Exclusions du build ------------------------------------
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - .github
+  - .gitignore

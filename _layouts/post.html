@@ -1,0 +1,48 @@
+---
+layout: default
+---
+{% assign cat_slug = page.categories | first %}
+{% assign cat_meta = site.categories_meta[cat_slug] %}
+
+<article class="post">
+
+  <header class="post-hero">
+    <div class="post-hero-inner">
+
+      {% if cat_meta %}
+        <a class="post-cat" href="{{ '/categories/' | append: cat_slug | append: '/' | relative_url }}">
+          {{ cat_meta.label | default: cat_slug }}
+        </a>
+      {% endif %}
+
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="post-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="post-meta">
+        <span>{{ page.author | default: site.author.name }}</span>
+        <span class="dot">·</span>
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+        {% if page.reading_time %}
+          <span class="dot">·</span>
+          <span>{{ page.reading_time }} min de lecture</span>
+        {% endif %}
+      </div>
+
+    </div>
+  </header>
+
+  <div class="container post-layout">
+
+    <div class="post-content prose">
+      {{ content }}
+    </div>
+
+    {% if page.tags and page.tags.size > 0 %}
+      <div class="post-tags">
+        {% for tag in page.tags %}<span class="tag">#{{ tag }}</span>{% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+
+</article>

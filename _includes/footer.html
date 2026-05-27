@@ -1,0 +1,23 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-social">
+      {% if site.social.github != "" %}
+        <a href="https://github.com/{{ site.social.github }}" rel="noopener">GitHub</a>
+      {% endif %}
+      {% if site.social.linkedin != "" %}
+        <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}/" rel="noopener">LinkedIn</a>
+      {% endif %}
+      {% if site.social.twitter != "" %}
+        <a href="https://twitter.com/{{ site.social.twitter }}" rel="noopener">Twitter</a>
+      {% endif %}
+      {% if site.social.email != "" %}
+        <a href="mailto:{{ site.social.email }}">Email</a>
+      {% endif %}
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </div>
+
+    <p class="footer-copy">© {{ "now" | date: "%Y" }} {{ site.author.name }}, {{ site.title }}. Tous droits réservés.</p>
+
+  </div>
+</footer>
