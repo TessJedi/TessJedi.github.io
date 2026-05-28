@@ -25,4 +25,4 @@ Enfin, parce que les certifications cyber-IA (ISO/IEC 27001, ISO/IEC 42001) sign
 
 ## Le contrat
 
-Un article par semaine maximum, entre 800 et 2000 mots. Frameworks cités à leur version exacte. Vendeurs nommés avec leurs montants. Erreurs corrigées e
+Deux articles par semaine minimum, Frameworks cités à leur version exacte.
